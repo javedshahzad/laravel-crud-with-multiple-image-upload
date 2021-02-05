@@ -24,7 +24,7 @@
         $(document).ready(function(){
             $("button").click(function()
             {
-                alert('okkkkkkkkkkkkkkkkkkkkk');
+                //alert('okkkkkkkkkkkkkkkkkkkkk');
             });
         });
     </script>

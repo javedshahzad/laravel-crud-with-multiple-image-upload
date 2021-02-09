@@ -1,0 +1,10 @@
+php artisanmake:model Product \\make a model
+
+php artisan make:migration create_products_table \\ create new table
+
+php artisan migrate \\ migrate all table into databsae
+php artisan make:seeder productseeder //make seeder 
+
+php artisan db:seed --class=productSeeder  //insert fake data into database
+
+php artisan make:controller UserController

@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col-sm-6">
-      <img class="detail-img" src="{{$details['gallery']}}">
+      <img class="detail-img" src="\upload_images\products\{{$details['gallery']}}">
     </div>
         <div class="col-sm-6">
       <a href="/" class="btn btn-primary">Go Back</a>

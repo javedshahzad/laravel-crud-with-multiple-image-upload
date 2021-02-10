@@ -26,6 +26,7 @@
     img.slider-img
     {
         height: 400px !important;
+        width: 100% !important;
     }
     .custom-product{
         height: 600px

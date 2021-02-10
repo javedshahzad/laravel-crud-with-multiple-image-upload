@@ -22,7 +22,7 @@
               @foreach ($data as $item)
               <div class="item {{$item['id']==1?'active':''}} ">
               <a href="details/{{$item['id']}}">
-                <img class="slider-img" src="{{$item['gallery']}}" alt="Chania">
+                <img class="slider-img" src="\upload_images\products\{{$item['gallery']}}" alt="Chania">
                 <div class="carousel-caption slider-text">
                 <h3>{{$item['name']}}</h3>
                   <p>{{$item['description']}}</p>
@@ -48,9 +48,10 @@
               @foreach ($data as $item)
               <div class="tredning-item">
                 <a href="details/{{$item['id']}}">
-              <img class="trending-img" src="{{$item['gallery']}}">
+              <img class="trending-img" src="\upload_images\products\{{$item['gallery']}}">
                 <div class="">
-                <h3>{{$item['name']}}</h3>
+                <h3>Name:{{$item['name']}}</h3>
+                <h4>${{$item['price']}}</h4>
                 </div>
               </a>
               </div>  

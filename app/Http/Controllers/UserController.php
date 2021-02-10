@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
-
+use DB;
 class UserController extends Controller
 {
     public function login(Request $req)
@@ -19,5 +19,15 @@ class UserController extends Controller
     		$req->session()->put('user',$user);
     		return redirect('/');
     	}
+    }
+
+    public function register(Request $req)
+    {
+        $user=new User;
+        $user->name=$req->name;
+        $user->email=$req->email;
+        $user->password=Hash::make($req->password);
+        $user->save();
+        return redirect('/login');
     }
 }

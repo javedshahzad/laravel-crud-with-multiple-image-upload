@@ -4,32 +4,34 @@
 <div class="custom-product">
           <div class="col-sm-10">
             <div class="trending-wrapper">
-                <h2>Cart List</h2>
+                <h2>My Orders List</h2>
                <br> <br>
-               <a class="btn btn-success" href="/ordernow">Order Now</a> <br> <br>
+           
                 <div class="">
                   <?php $number=1 ?>
-                  @foreach ($data as $item)
+                  @foreach ($orders as $item)
                   <h3><?php echo $number++ ?></h3> 
                   <div class="row search-item cart-list-devider">
                     <div class="col-sm-3">
                         <a href="detail/{{$item->id}}">
-                            <img class="trending-img" src="\upload_images\products\{{$item->gallery}}">
-                            
+                            <img class="trending-img" src="{{$item->gallery}}">
                             </a>
                     </div>
                     <div class="col-sm-3">  
                               <div class="">
-                              <h3>{{$item->name}}</h3>
-                              <h5>{{$item->description}}</h5>
+                              <h3>Name: {{$item->name}}</h3>
+                              <h5>Status: {{$item->status}}</h5>
+                              <h5>Payment Status{{$item->payment_status}}</h5>
+                              <h5>Payment Method{{$item->payment_method}}</h5>
+                              <h5>Address: {{$item->address}}</h5>
                               </div>  
                     </div>
                     <div class="col-sm-3">
-                        <a href="/removecart/{{$item->cart_id}}" class="btn btn-warning" >Remove From Cart</a>      
+                       
                     </div>
                   </div>  
                   @endforeach
-                <a class="btn btn-success" href="/ordernow">Order Now</a> <br> <br>
+                
 
                 </div>
               </div>

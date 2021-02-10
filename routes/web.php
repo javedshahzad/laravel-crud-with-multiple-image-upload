@@ -23,11 +23,19 @@ Route::get('/logout', function () {
 
 
 Route::view('/login','login');
+Route::view('/register','register');
 Route::post('/login','UserController@login');
+Route::post('register','UserController@register');
 Route::get('/','ProductController@index');
 Route::get('details/{id}','ProductController@details');
 Route::get('search','ProductController@search');
 Route::post('/add_to_cart','ProductController@addtocart');
 Route::get('cartlist','ProductController@carItem');
 Route::get('removecart/{id}','ProductController@removeCart');
+Route::get('ordernow','ProductController@orderNow');
+Route::post('orderplace','ProductController@orderPlace');
+Route::get('myorder','ProductController@myOrder');
+Route::get('additem','ProductController@additems');
+Route::post('addproduct','ProductController@addProduct');
+
 

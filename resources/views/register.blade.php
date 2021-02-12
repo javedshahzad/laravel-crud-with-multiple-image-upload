@@ -1,76 +1,69 @@
 
-@extends('master')
-@section('content')
 
-<div class="container">
 
-   <form  action="register" method="POST" onsubmit="return validation()" >
-   @csrf
-  <div class="form-group input-group">
-    <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-     </div>
-     <label for="exampleInputEmail1">Name: </label>
-        <input name="name" class="form-control" placeholder="Full name" type="text" id="name">
 
+@extends('java')
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+
+<!-- //Custom Theme files -->
+<link rel="stylesheet" href="\css\style.css"> <!---  css file  --->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<!-- //web font -->
+
+
+<!-- main -->
+  <div class="main-w3layouts wrapper">
+    <h1> Registration </h1>
+    <div class="main-agileinfo">
+      <div class="agileits-top">
+        <form  action="register" method="POST" onsubmit="return validation()" >
+           @csrf
+          <input class="text" type="text" name="name" placeholder="Your Name" required>
+
+             <input class="text email" type="text" name="username" placeholder="Username" required="">
+             <input class="text email" type="text" name="address" placeholder="Address" required="">
+             <input class="text email" type="text" name="phone" placeholder="Phone" required="">
+
+          <input class="text email" type="email" name="email" placeholder="Email" required="">
+          
+          <input class="text w3lpass" type="password" name="password" placeholder="Password" required="">
+          <div class="wthree-text">
+            <label class="anim">
+              <input type="checkbox" class="checkbox" required="">
+              <span>I Agree To The Terms & Conditions</span>
+            </label>
+            <div class="clear"> </div>
+          </div>
+          <input type="submit" name="submit" id="submit" value="Register">
+        </form>
+        <p>Have an Account? <a href="/login"> Login Now!</a></p>
+      </div>
     </div>
-    <span id="username" style="color: red"></span> <!-- form-group// -->
-    <div class="form-group input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-     </div><label for="exampleInputEmail1">Email address</label>
-        <input name="email" class="form-control" placeholder="Email address" type="email" id="email"> 
-    </div> <span id="useremail" style="color: red"></span>
-
-
-    <div class="form-group input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-    </div><label for="exampleInputEmail1">Password:</label>
-        <input name="password" class="form-control" placeholder="Create password" type="password" id="password"> 
-    </div> <span id="userpassword" style="color: red"></span> <!-- form-group// -->
-  
-    <div class="form-group">
-        <button name="submit" id="submit" type="submit" class="btn btn-primary">Register</button>
-    </div> 
-                                                               
-</form>
-
-</div>
+    <!-- copyright -->
+    <div class="colorlibcopy-agile">
+      <p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/" target="_blank">Colorlib</a></p>
+    </div>
+    <!-- //copyright -->
+    <ul class="colorlib-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <!-- //main -->
 
 
 
-<script type="text/javascript">
-
-       
-            function validation(){
-          var name = $('#name').val();
-          var email = $('#email').val();
-         
-         
-          var password = $('#password').val();
-         
-         
-
-       if(name==""){
-           $('#username').html('<p>**Please fill Your Name</p>').fadeIn('slow'); 
-           $('#username').delay(3000).fadeOut('slow');
-        return false;
-      }
-      if(email==""){
-           $('#useremail').html('**Please fill Your Email').fadeIn('slow'); 
-           $('#useremail').delay(3000).fadeOut('slow');
-        return false;
-      }
-      
-     
-      if(password==""){
-           $('#userpassword').html('**Please fill Your Password').fadeIn('slow'); 
-           $('#userpassword').delay(3000).fadeOut('slow');
-        return false;
-      }
-}
-</script>
-
-@endsection
 

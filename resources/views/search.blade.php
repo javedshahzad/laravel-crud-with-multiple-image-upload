@@ -13,7 +13,7 @@
               @foreach ($details as $item)
               <div class="searched-item">
                 <a href="details/{{$item['id']}}">
-              <img class="trending-img" src="{{$item['gallery']}}">
+              <img class="trending-img" src="\upload_images\products\{{$item['gallery']}}">
                 <div class="">
                 <h3>{{$item['name']}}</h3>
                  <h3>{{$item['description']}}</h3>

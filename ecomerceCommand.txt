@@ -7,4 +7,16 @@ php artisan make:seeder productseeder //make seeder
 
 php artisan db:seed --class=productSeeder  //insert fake data into database
 
-php artisan make:controller UserController
+php artisan make:controller UserController //to create user controller
+
+composer create-project laravel/laravel example-app //to create new project
+
+php artisan serve // to start server
+
+
+
+mansourko.net
+oxygen@mansourko.net
+
+
+class:btn class:btn-primary

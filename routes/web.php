@@ -21,11 +21,14 @@ Route::get('/logout', function () {
 });
 
 
-
+//view login page and register
 Route::view('/login','login');
 Route::view('/register','register');
+//User controller
 Route::post('/login','UserController@login');
 Route::post('register','UserController@register');
+
+//product controller
 Route::get('/','ProductController@index');
 Route::get('details/{id}','ProductController@details');
 Route::get('search','ProductController@search');
@@ -37,5 +40,3 @@ Route::post('orderplace','ProductController@orderPlace');
 Route::get('myorder','ProductController@myOrder');
 Route::get('additem','ProductController@additems');
 Route::post('addproduct','ProductController@addProduct');
-
-

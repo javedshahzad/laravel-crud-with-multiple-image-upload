@@ -10,13 +10,20 @@ class UserController extends Controller
 {
     public function login(Request $req)
     {
-    	$user= User::where(['email'=>$req->email])->first();
-    	if(!$user || !Hash::check($req->password,$user->password))
+    	$useremail= User::where(['email'=>$req->email])->first();
+        if($useremail==''){
+            return "Email is empty Or Invalid";
+        }
+        $userpassword = Hash::check($req->password,$useremail->password);
+        if ($userpassword == '') {
+            return "Password is wrong or empty";
+        }
+    	if(!$useremail || !$userpassword)
     	{
     		return "Invalid Email or Password";
     	}else
     	{
-    		$req->session()->put('user',$user);
+    		$req->session()->put('user',$useremail);
     		return redirect('/');
     	}
     }
@@ -25,6 +32,9 @@ class UserController extends Controller
     {
         $user=new User;
         $user->name=$req->name;
+        $user->username=$req->username;
+        $user->address=$req->address;
+        $user->phone=$req->phone;
         $user->email=$req->email;
         $user->password=Hash::make($req->password);
         $user->save();

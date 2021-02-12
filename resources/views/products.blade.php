@@ -1,14 +1,15 @@
 @extends('master')
 @section('content')
 
-<p>kkkkkkkkkkkkkkkkkkkkkk</p>
+
 <div class="custom-product">
  @if(\Session::has('success'))
 <h2 style="color: green; text-align: center;">
 {{\Session::get('success')}}
 </h2>
 @endif
-<p>kkkkkkkkkkkk</p>
+
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -42,6 +43,7 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+
           <div class="trending-wrapper">
             <h1>Trending Products</h1>
             <div class="">

@@ -10,23 +10,29 @@ use Session;
 use DB;
 
 class ProductController extends Controller
-{
+{     //main home
     public function index()
     {
     	$data= Product::all();
     	return view('products',['data'=>$data]);
     }
+
+    //detals
     public function details($id)
     {
     	$data = Product::find($id);
     	return view('detail',['details'=>$data]);
     }
+
+    //search items
     public function search(Request $req)
     {
     	 
     	 $data=Product::where('name','like','%'.$req->input('query').'%'  )->get();
     	 return view('search',['details'=>$data]);
     }
+
+    //add to cart items
     public function addtocart(Request $req)
     {
     	
@@ -49,7 +55,7 @@ class ProductController extends Controller
         $user_id=Session::get('user')['id'];
         return Cart::where('user_id',$user_id)->count();
     }
-
+    //show cart items
     public function carItem()
     {
         $user_id=Session::get('user')['id'];
@@ -61,14 +67,14 @@ class ProductController extends Controller
         return view('cartList',['data'=>$data]);
        
     }
-
+    //remove from cartlist
     public function removeCart($id)
     {
         Cart::destroy($id);
         return redirect('cartlist');
     }
 
-
+      //order new data
     public function orderNow()
     {
         $user_id=Session::get('user')['id'];
@@ -78,7 +84,7 @@ class ProductController extends Controller
         ->sum('products.price');
         return view('ordernow',['total'=>$total]);
     }
-
+      //placed order
     public function orderPlace(Request $req)
     {
          $user_id=Session::get('user')['id'];
@@ -108,6 +114,7 @@ class ProductController extends Controller
         
     }
 
+    //list to view my order
     public function myOrder()
     {
          $user_id=Session::get('user')['id'];
@@ -118,12 +125,12 @@ class ProductController extends Controller
         return view('myorder',['orders'=>$orders]);
     }
 
-
+    //view to add new items
     public function additems(Request $req)
     {
         return view('addnewitem');
     }
-
+    //add new product
     public function addProduct(Request $req)
     {
 

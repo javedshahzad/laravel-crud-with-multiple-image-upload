@@ -23,8 +23,9 @@
              <br><br>
         <button  type="submit" class="btn btn-info" >Buy Now</button>
     </div>
-    
   </div>
-  
 </div>
+<br>
+<br>
+<br>
 @endsection

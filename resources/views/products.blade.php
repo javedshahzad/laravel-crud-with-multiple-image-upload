@@ -60,5 +60,13 @@
               @endforeach
             </div>
           </div>
+
 </div>
+ <div class="container">
+            <div class="page">
+              <h1 class="text-center">All things is Ok</h1>
+              
+            </div>
+            
+          </div>
 @endsection

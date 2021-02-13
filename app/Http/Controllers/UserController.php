@@ -37,6 +37,17 @@ class UserController extends Controller
         $user->phone=$req->phone;
         $user->email=$req->email;
         $user->password=Hash::make($req->password);
+
+        if($req->hasFile('image')){
+        $file = $req->file('image');
+        $extention =$file->getClientOriginalExtension();
+        $filename=time().'.'.$extention;
+        $file->move('user_img/images',$filename);
+        $user->gallery = $filename;
+    }else{
+        return $req;
+        $user->gallery='';
+    }
         $user->save();
         return redirect('/login');
     }

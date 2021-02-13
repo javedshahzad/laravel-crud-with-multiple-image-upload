@@ -21,7 +21,7 @@
     <h1> Registration </h1>
     <div class="main-agileinfo">
       <div class="agileits-top">
-        <form  action="register" method="POST" onsubmit="return validation()" >
+        <form  action="register" method="POST" onsubmit="return validation()" enctype="multipart/form-data" >
            @csrf
           <input class="text" type="text" name="name" placeholder="Your Name" required>
 
@@ -32,6 +32,7 @@
           <input class="text email" type="email" name="email" placeholder="Email" required="">
           
           <input class="text w3lpass" type="password" name="password" placeholder="Password" required="">
+          <input type="file" class="text email" name="image" id="gallery" required="">
           <div class="wthree-text">
             <label class="anim">
               <input type="checkbox" class="checkbox" required="">

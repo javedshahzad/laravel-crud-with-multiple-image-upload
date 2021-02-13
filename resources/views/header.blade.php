@@ -41,9 +41,14 @@ $total=ProductController::cartItem();
             
           <li><a href="/cartlist">Cart Items({{$total}}) </a></li>
          @if(Session::has('user'))
+
          <li><a href="/additem">Add Item </a></li>
+         <li>
+         <img src="\user_img\images\{{Session::get('user')['gallery']}}" style="height: 50px;width: 50px; border-radius: 50%"></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{Session::get('user')['name']}}
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+
+             {{Session::get('user')['name']}}
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="/logout">Logout</a></li>

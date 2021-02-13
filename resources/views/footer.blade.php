@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<div style="clear:both" class="panel panel-default">
+<div style="clear:both" class="panel panel-default my_footer">
     <div class="panel-body text-center">
     	<div class="container">
               <div class="row">
@@ -21,16 +21,20 @@
               </div>
           </div>
     </div>
-    <div class="panel-footer text-center">
-     <div class="copyrights">
-            © Copyright 2021 <span>|</span> <a href="http://mannatstudio.com/html/consultit/">Oxygensoft</a> Powered By Javed Shahzad <a href="https://themeforest.net/user/mannatstudio">Shahzad Studio</a> <span>|</span> All Rights Reserved
-          </div>
-</div>
-  </div>
+      <div class="panel-footer text-center my_footer">
+           <div class="copyrights ">
+            © Copyright 2021 <span>|</span> <a href="#">Javed Shahzad</a> Powered By Javed Shahzad <a href="#">Shahzad Studio</a> <span>|</span> All Rights Reserved
+            </div>
+        </div>
+    </div>
 
 
                     
 <style>
+  .my_footer{
+    background-color: #555;
+    color: white;
+  }
 .fa {
      padding: 15px;
     font-size: 18px;
@@ -76,10 +80,6 @@
   background: #125688;
   color: white;
 }
-
-
-
-
 
 .fa-skype {
   background: #00aff0;
